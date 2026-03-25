@@ -10,11 +10,11 @@ using namespace std;
 typedef array<int,52> arr52;
 
 int ATTEMPTS = 1000; //number of attemps recorded onto the csv
-int CUTS = 5;        //this is the amount of times the cut/other mixing alg is applied
+int CUTS = 5;        //amount of times the cut/other mixing alg is applied
  
 
 int main(){
-    ofstream outFile("result.csv");
+    ofstream outFile("result.csv"); //file in bin folder
     for (int i = 0; i < ATTEMPTS; i++){
         arr52 deck;
         for (int j = 0; j < 52; j++) deck[j] = j;
