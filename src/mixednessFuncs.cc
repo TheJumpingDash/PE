@@ -1,10 +1,10 @@
 #include <algorithm>
 #include <cstdlib>
-#include <array>
+#include <vector>
 using namespace std;
 typedef array<int,52> arr52;
 
-double avg_dist_to_neighbour(const arr52& cards){
+double avg_dist_to_neighbour(const vector<int>& cards){
     int sum = 0;
     for(int i = 0; i < 52; i++){
         int lowDist = 0, highDist = 0, j = 0;
