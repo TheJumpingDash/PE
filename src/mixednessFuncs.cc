@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <cstdlib>
 #include <vector>
+#include <cmath>
 using namespace std;
 typedef array<int,52> arr52;
 
@@ -28,4 +29,14 @@ double avg_dist_to_neighbour(const vector<int>& cards){
     }
     return sum / 104.0;
 }
-//other funcs here
+double shannon_entropy(const vector<int>& cards){
+    double entropy = 0.0;
+    for (int i = 0; i < 51; i++){
+        int currentCard = cards[i];
+        int nextCard = cards[(i + 1) % 52];
+        double diff = fabs(currentCard - nextCard);
+        double pK = diff / 52.0;
+        entropy += -pK * log(pK);
+    }
+    return entropy;
+}
