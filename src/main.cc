@@ -9,13 +9,13 @@
 
 using namespace std;
 
-int RANGE = 50;     //rang de nombre de vegades que executem la funció
+int RANGE = 20;     //rang de nombre de vegades que executem la funció
 int ATTEMPTS = 1000; //quantitat d'intents que es guarda al CSV per cada nombre de vegades que executem la funció
 
 int main(){
 
-    for (int cutSize = 1; cutSize < 30; cutSize++){
-        ofstream outFile(string("cut_and_shuffle") + to_string(cutSize) + string(".csv")); //arxiu CSV a la carpeta "bin"
+    for (int cutSize = 1; cutSize < 25; cutSize++){
+        ofstream outFile(string("cut_and_shuffle_") + to_string(cutSize) + string(".csv")); //arxiu CSV a la carpeta "bin"
         for (int TIMES_SHUFFLED = 1; TIMES_SHUFFLED < RANGE; TIMES_SHUFFLED++){
             for (int i = 0; i < ATTEMPTS; i++){
                 vector<int> deck(52);
