@@ -27,8 +27,30 @@ void get_cut_place_and_destination(const int nCardsCut, int& cutPlace, int& dest
     }
 }
 
-void cut_once(vector<int>& cards, const int nCardsCut){
+void riffle_shuffle(vector<int>& cards, const double p){ //p és la probabilitat de no canviar
+    std::bernoulli_distribution dist(1-p);
+    std::array<int, 52> input;
+    for (int i = 0; i < 52; i++) input[i] = cards[i];
 
+    for (int i = 0; i < 52; i++){
+        if (dist(rng)) offset = !offset;
+        if (i1 >= 26) {
+            offset = 1; 
+        } else if (i2 >= 52) {
+            offset = 0; 
+        }
+
+        if (offset){
+            cards[i] = input[i2];
+            i2++;
+        } else{
+            cards[i] = input[i1];
+            i1++;
+        }     
+    } 
+}
+
+void cut_once(vector<int>& cards, const int nCardsCut){
     int cutPlace, destination;
     get_cut_place_and_destination(nCardsCut, cutPlace, destination);
 

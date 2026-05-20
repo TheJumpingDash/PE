@@ -14,7 +14,7 @@ int ATTEMPTS = 1000; //quantitat d'intents que es guarda al CSV per cada nombre 
 
 int main(){
 
-    for (int cutSize = 1; cutSize < 25; cutSize++){
+    for (int cutSize = 1; cutSize < 35; cutSize++){
         ofstream outFile(string("cut_and_shuffle_") + to_string(cutSize) + string(".csv")); //arxiu CSV a la carpeta "bin"
         for (int TIMES_SHUFFLED = 1; TIMES_SHUFFLED < RANGE; TIMES_SHUFFLED++){
             for (int i = 0; i < ATTEMPTS; i++){
