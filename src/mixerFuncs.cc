@@ -1,4 +1,5 @@
 #include <vector>
+#include <array>
 #include <random>
 #include <algorithm>
 #include <iterator>
@@ -29,9 +30,10 @@ void get_cut_place_and_destination(const int nCardsCut, int& cutPlace, int& dest
 
 void riffle_shuffle(vector<int>& cards, const double p){ //p és la probabilitat de no canviar
     std::bernoulli_distribution dist(1-p);
-    std::array<int, 52> input;
+    arr52 input;
     for (int i = 0; i < 52; i++) input[i] = cards[i];
-
+    bool offset = 0;
+    int i1 = 0, i2 = 26;
     for (int i = 0; i < 52; i++){
         if (dist(rng)) offset = !offset;
         if (i1 >= 26) {

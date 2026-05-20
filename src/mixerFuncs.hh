@@ -6,6 +6,7 @@ using namespace std;
 //i aquestes funcions barrejen el deck 1 cop
 void cut_once(vector<int>& cards, const int nCardsCut);
 void cut_and_shuffle(vector<int>& cards, const int nCardsCut);
+void riffle_shuffle(vector<int>& cards, const double p);
 void randomize(vector<int>& cards);
 //...
 
