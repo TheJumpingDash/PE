@@ -18,7 +18,7 @@ int main(){
         
         stringstream ss;
         ss << prob;
-        string filename = string("riffe_shannon_") + ss.str() + string(".csv");
+        string filename = string("riffle_shannon_") + ss.str() + string(".csv");
         
         ofstream outFile(filename); //arxiu CSV a la carpeta "bin"
         for (int TIMES_SHUFFLED = 1; TIMES_SHUFFLED < RANGE; TIMES_SHUFFLED++){
